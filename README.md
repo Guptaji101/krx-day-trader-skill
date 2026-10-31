@@ -22,14 +22,14 @@ a paper-only broker.
 In Claude Code:
 
 ```
-/plugin marketplace add <your-github-name>/krx-day-trader-skill
+/plugin marketplace add Guptaji101/krx-day-trader-skill
 /plugin install krx-day-trader-skill@krx-day-trader-skill
 ```
 
 Or copy the folders for plain `/krx-scanner` commands:
 
 ```bash
-git clone https://github.com/<your-github-name>/krx-day-trader-skill.git
+git clone https://github.com/Guptaji101/krx-day-trader-skill.git
 cp -r krx-day-trader-skill/krx-* ~/.claude/skills/
 ```
 
