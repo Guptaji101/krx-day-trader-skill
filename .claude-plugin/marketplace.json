@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "krx-day-trader-skill",
+  "description": "The KRX Day Trader skill pack for Claude (Korean market, paper only)",
+  "owner": {"name": "krx-day-trader-skill contributors"},
+  "plugins": [
+    {
+      "name": "krx-day-trader-skill",
+      "description": "Eleven Claude skills for paper day trading on KOSPI and KOSDAQ, with Korean costs, ticks and price limits.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
