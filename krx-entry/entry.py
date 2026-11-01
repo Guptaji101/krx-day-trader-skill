@@ -18,7 +18,8 @@ Setups:
   --min-volume-x X  the trigger bar needs X times the opening range's average volume.
 
 A trigger's time is the bar's CLOSE time (the 09:40 bar closes at 09:45) and its
-price is that close. A bar counts only once it has closed.
+price is that close, snapped to the KRX tick grid (Yahoo's 5-minute closes are not
+always on it, e.g. 220,250 where the tick is 500). A bar counts only once it has closed.
 
 Statuses: triggered; waiting; expired (no trigger by no_entries_after, default
 15:00, well before the 15:20 closing auction); no-data (closed day or no bars).
@@ -177,7 +178,8 @@ def evaluate(result, info, now_utc, setup="orb", or_minutes=15, interval="5m", l
         res.update(status="triggered", phase="open" if mins_now < s["cont_end"] else "after-close",
                    reason="the %s bar closed above %s" % (trig["start"], "the range high" if setup == "orb" else "the level"))
         res["trigger"] = {"time": krx.hm(trig["end_min"]), "close_time": krx.hm(trig["end_min"]),
-                          "bar_start": trig["start"], "bar_index": trig["slot"], "price": trig["c"],
+                          "bar_start": trig["start"], "bar_index": trig["slot"],
+                          "price": krx.round_tick(trig["c"]), "close": trig["c"],
                           "volume": trig["v"], "volume_x": round(vx, 2) if vx else None,
                           "pct_over": round(100.0 * (trig["c"] / lvl - 1), 2)}
         res["minutes_since"] = int(mins_now - trig["end_min"])

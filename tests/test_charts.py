@@ -102,6 +102,18 @@ class Entry(unittest.TestCase):
         self.assertEqual(r["trigger"]["price"], 120500)
         self.assertEqual(r["opening_range"]["high"], 120300)
 
+    def test_trigger_price_on_tick_grid(self):
+        res = krx.chart_result(fakes.chart(end="2026-10-30", days=60, until="10:30", seed=3))
+        q = res["indicators"]["quote"][0]
+        last_day = [i for i, t in enumerate(res["timestamp"])
+                    if krx.to_kst(krx.utc_of(t)).date().isoformat() == "2026-10-30"]
+        k = last_day[4]                                  # the trigger bar (09:20)
+        q["close"][k] = q["close"][k] + 30               # Yahoo-style off-grid close
+        r = entry.evaluate(res, self.info, NOW)
+        self.assertEqual(r["trigger"]["bar_index"], 4)
+        self.assertTrue(krx.on_grid(r["trigger"]["price"]))
+        self.assertNotEqual(r["trigger"]["close"], r["trigger"]["price"])
+
     def test_waiting_before_trigger(self):
         r = self.ev("2026-10-30 09:20")
         self.assertEqual(r["status"], "waiting")
