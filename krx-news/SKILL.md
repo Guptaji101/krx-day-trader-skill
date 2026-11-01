@@ -12,7 +12,7 @@ argument-hint: "[codes or names]"
 
 Reads what could be behind the price action. In Korea the filing (공시) moves the stock more often than the headline, so DART filings come first.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/news.py"                               # portfolio, plan and watchlist

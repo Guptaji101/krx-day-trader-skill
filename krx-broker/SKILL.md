@@ -14,7 +14,7 @@ argument-hint: "[show | approve | check | flatten | portfolio | log]"
 
 A practice account in won. It cannot send a real order; that is deliberate. Paper fills are kinder than real ones, and the tool says so.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/ticket.py" show                       # the tickets, READY or not

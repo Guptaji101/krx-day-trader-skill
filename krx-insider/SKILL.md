@@ -12,7 +12,7 @@ argument-hint: "[codes or names | --watch | --market]"
 
 Korea's lawmakers report assets once a year, not trade by trade, so the timely public trail in Korea is the insiders': executives and 10 %+ holders report changes within 5 business days, and 5 %+ holders report every 1 %-point change.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/insider.py" 005930                  # executives and major holders

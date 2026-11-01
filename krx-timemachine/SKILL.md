@@ -13,7 +13,7 @@ argument-hint: "[path to plan.json, or code]"
 
 Asks one question before any money: if today plays out like the stock's last 60 days, how often does this plan hit the target first, the stop first, or neither by 15:20? It is a simulation, not a prediction.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/timemachine.py" run --write          # krx/plan.json, 10,000 replays, seed 19

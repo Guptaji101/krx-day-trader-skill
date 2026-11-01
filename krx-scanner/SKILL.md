@@ -14,7 +14,7 @@ argument-hint: "[universe | daily | orb]"
 
 Finds charts that match a rule, across about 2,500 KOSPI and KOSDAQ stocks. A scan is a list of charts that match a rule, not a list of stocks to buy.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/scan.py" universe                  # KIND lists -> krx/universe.json (do this first)

@@ -12,7 +12,7 @@ argument-hint: "[code or name]"
 
 Sums up what changed in the numbers, from the filings themselves. In Korea the preliminary results (잠정실적 공정공시) come weeks before the quarterly report and move the price on results day.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/facts.py" 005930                    # 6 quarters, consolidated (연결)

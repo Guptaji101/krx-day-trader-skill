@@ -12,7 +12,7 @@ argument-hint: "[--stop or-mid|or-low|pct:X|atr:K|price:X] [--target 2R|price:X]
 
 Sets the exit before the entry, so the user knows when to get out, win or lose, and out by 15:15 before the closing auction.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/exit.py" plan --write                  # from krx/entry.json: or-mid stop, 2R

@@ -13,7 +13,7 @@ argument-hint: "[code or name]"
 
 Watches one setup on 5-minute bars. The opening range is 09:00-09:15 by default; a trigger is the first COMPLETED bar after it that CLOSES above the range high. A wick is not a trigger.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/entry.py" check 005930 --write          # waiting / triggered / expired

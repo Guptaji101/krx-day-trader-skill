@@ -12,7 +12,7 @@ argument-hint: "[--budget WON] [--max-loss WON]"
 
 Turns a plan into one proposed paper order. The smallest of four limits wins.
 
-`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only.
+`${CLAUDE_SKILL_DIR}` is this skill's folder. Everything is written under `krx/` in the current project. Python 3.8+, standard library only. On Windows, `python3` is often missing or opens the Microsoft Store: use `python` instead (run `python --version` once to check), and set `PYTHONUTF8=1` so Korean text prints correctly.
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/size.py" --write                    # krx/plan.json -> krx/orders.json
